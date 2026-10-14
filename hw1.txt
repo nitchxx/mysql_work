@@ -1,0 +1,10 @@
+INSERT INTO library (title,author,price,genre)
+VALUES('The Great Gatsby','F. Scott Fitzgerald','350','Fiction'),
+      ('The Da Vinci Code','Dan Brown','500','Mistery'),
+      ('A Brief History of Time','Stephen Hawking','450','Sceince'),
+      ('Sapiens','Yuval Noah Harari','600','History'),
+      ('The Hobbit','J. R. R. Tolkien','300','Fantasy');
+SELECT * FROM `library` WHERE price > 400;
+SELECT * FROM `library` WHERE genre IN ('Sceince','History','Fiction');
+SELECT * FROM `library` WHERE title = 'The Great Gatsby';
+SELECT * FROM `library` WHERE author <> 'Dan Brown';

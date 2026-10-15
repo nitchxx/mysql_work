@@ -1,0 +1,18 @@
+INSERT INTO bookstore(title,author,price,stock_status,genre)
+VALUES('The Hobbit','J.R.R. Tolkien','450','out of stock','fantasy'),
+      ('The Great Gatsby','F. Scott Fitzgerald','350','in stock','Fiction'),
+      ('A Brief History of Time','Stephen Hawking','800','out of stock','Science'),
+      ('The Da Vinci Code','Dan Brown','900','in stock','Thriller'),
+      ('Wings of Fire','A.P.J. Abdul Kalam','300','in stock','Biography'),
+      ('Sapiens','Yuval Noah Harari','550','out of stock','History'),
+      ('Pride and Prejudice','Jane Austen','280','in stock','Romance'),
+      ('Murder on the Orient Express','Agatha Christie','720','in stock','Mystery'),
+      ('The Alchemist','Paulo Coelho','250','in stock','Fiction'),
+      ('Cosmos','Carl Sagan','480','out of stock','Science');
+
+
+SELECT DISTINCT genre FROM bookstore;
+SELECT * FROM bookstore WHERE stock_status ='in stock' AND price < 400;
+SELECT * FROM bookstore WHERE stock_status ='out of stock' OR price > 700;
+SELECT title,price,(price * 1.10) AS price_with_gst FROM bookstore;
+SELECT title,price,stock_status FROM bookstore ORDER BY price DESC;

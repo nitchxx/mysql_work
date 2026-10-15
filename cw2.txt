@@ -1,0 +1,12 @@
+INSERT INTO products(name,category,price,in_stock)
+VALUES('Tv','Electronics','5000','yes'),
+      ('Travel bag','Luggage & Travel','1500','No'),
+      ('Chair','Furniture','450','No'),
+      ('Charger','Electronics','350','yes'),
+      ('Table','Furniture','3000','Yes');
+
+SELECT * FROM products WHERE price < 500 ;
+SELECT * FROM products WHERE price < 500 AND in_stock = 'yes';
+SELECT * FROM products WHERE price > 1000 AND in_stock = 'No';
+SELECT name,price FROM products ORDER BY price ASC;
+SELECT name,price,(price * 1.18) AS price_with_tax FROM products;

@@ -1,0 +1,43 @@
+CREATE TABLE students (
+    id INT PRIMARY KEY,
+    name VARCHAR(100),
+    course VARCHAR(100),
+    fees_paid DECIMAL(10,2),
+    status ENUM('Active', 'Inactive')
+);
+
+
+INSERT INTO students (id, name, course, fees_paid, status)
+VALUES
+(1, 'Alice', 'Web Development', 5000, 'Inactive'),
+(2, 'Bob', 'Data Science', 7000, 'Inactive'),
+(3, 'Charlie', 'UI/UX Design', 4000, 'Active'),
+(4, 'Arun', 'Python', 15000, 'Active'),
+(5, 'Akhil', 'Web Development', 12000, 'Active'),
+(6, 'Anjali', 'Java', 18000, 'Inactive'),
+(7, 'Amal', 'Data Science', 25000, 'Active'),
+(8, 'Meera', 'Python', 10000, 'Inactive'),
+(9, 'Rahul', 'Web Development', 15000, 'Active'),
+(10, 'Sneha', 'UI/UX Design', 8000, 'Inactive');
+
+
+SELECT * FROM `students` WHERE fees_paid >5000;
+
+UPDATE students
+SET status = 'Active'
+WHERE course = 'Web Development';
+
+UPDATE students
+SET fees_paid = fees_paid +1000
+WHERE course =  'Data Science';
+
+
+UPDATE students
+ SET status = 'Inactive' , fees_paid = fees_paid +500 
+WHERE id = 3;
+
+DELETE FROM students
+WHERE id = 2;
+
+DELETE FROM students
+WHERE status = 'Inactive' ;

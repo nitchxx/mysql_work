@@ -1,0 +1,43 @@
+CREATE TABLE bookstore (
+    book_id INT PRIMARY KEY,
+    title VARCHAR(100),
+    author VARCHAR(100),
+    price DECIMAL(10,2),
+    stock INT
+);
+INSERT INTO bookstore (book_id, title, author, price, stock)
+VALUES
+(1, 'The Hobbit', 'J.R.R. Tolkien', 450, 10),
+(2, 'The Great Gatsby', 'F. Scott Fitzgerald', 350, 15),
+(3, 'A Brief History of Time', 'Stephen Hawking', 800, 5),
+(4, 'The Da Vinci Code', 'Dan Brown', 500, 12),
+(5, 'Wings of Fire', 'A.P.J. Abdul Kalam', 300, 20),
+(6, 'Harry Potter', 'J.K. Rowling', 600, 8),
+(7, 'Atomic Habits', 'James Clear', 400, 18),
+(8, 'The Alchemist', 'Paulo Coelho', 250, 25),
+(9, 'Rich Dad Poor Dad', 'Robert Kiyosaki', 550, 7),
+(10, 'Pride and Prejudice', 'Jane Austen', 320, 14);
+
+
+UPDATE bookstore 
+SET book_id = 1 , title = 'Learn SQL' , author = 'John Smith' , price = 400 , stock = 10 
+WHERE book_id = 1;
+
+UPDATE bookstore
+ SET book_id = 2 , title ='Mastering Python' , author = 'Jane Doe' , price = 600 , stock =5
+ WHERE book_id = 2;
+
+UPDATE bookstore
+ SET book_id = 3 , title = 'HTML & CSS Basics' , author = 'Alan Webb', price = 300 , stock = 8
+ WHERE book_id = 3;
+
+UPDATE bookstore
+SET price =price + 50 , stock = 12
+WHERE title ='Learn SQL';
+
+UPDATE bookstore
+SET stock = stock - 2
+WHERE price > 500;
+
+DELETE FROM bookstore
+WHERE book_id = 3 ;

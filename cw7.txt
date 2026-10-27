@@ -1,0 +1,16 @@
+CREATE DATABASE GroceryShop ;
+
+CREATE TABLE products(
+	 product_id INT AUTO_INCREMENT NOT NULL,
+ 	product_name VARCHAR(50) NOT NULL ,
+    price DECIMAL(10,2),
+    PRIMARY KEY(product_id)
+);
+
+ALTER TABLE products
+ADD category VARCHAR(50)
+AFTER product_name;
+
+TRUNCATE TABLE products;
+
+Finally, delete the entire database as it’s no longer needed.

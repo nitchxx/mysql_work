@@ -1,0 +1,37 @@
+CREATE DATABASE local_library;
+USE local_library ;
+CREATE TABLE books(
+  book_id INT AUTO_INCREMENT NOT NULL,
+  title VARCHAR(50),
+    PRIMARY KEY(book_id));
+
+USE local_library ;
+CREATE TABLE borrowers(
+  book_id INT PRIMARY KEY NOT NULL,
+  title VARCHAR(50),
+    FOREIGN KEY(book_id) REFERENCES books(book_id));
+
+INSERT INTO books(title)
+VALUES('The Alchemist'),('The Power of Now'),('Think and Grow Rich'),( 'Clean Code');
+
+INSERT INTO borrowers(borrower_id,name,book_id)
+VALUES(101,'Alice',1),(102,'Bob',2),(103,'Charlie',NULL);
+
+SELECT books.title,borrowers.name 
+FROM books
+LEFT JOIN borrowers ON books.book_id = borrowers.book_id;
+
+SELECT borrowers.name,books.title
+FROM borrowers 
+LEFT JOIN books
+ON books.book_id = borrowers.book_id ;
+
+SELECT books.title
+FROM books
+LEFT JOIN borrowers ON borrowers.book_id != books.book_id
+WHERE borrowers.book_id IS NULL;
+
+SELECT borrowers.name,books.book_id,books.title
+FROM `books` 
+RIGHT JOIN borrowers
+ON books.book_id = borrowers.book_id ;

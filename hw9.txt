@@ -1,0 +1,11 @@
+CREATE TABLE author(
+Author_id INT PRIMARY KEY NOT NULL,
+    Author_name VARCHAR(100) NOT NULL,
+    Email_address VARCHAR(100),
+    UNIQUE(Email_address)
+);
+CREATE TABLE books(
+    Book_id INT PRIMARY KEY NOT NULL,
+    Book_title VARCHAR(150) NOT NULL,
+    Author_id INT,
+    FOREIGN KEY(Author_id) REFERENCES author(Author_id));

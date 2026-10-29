@@ -1,0 +1,17 @@
+CREATE TABLE students(
+    student_id INT PRIMARY KEY NOT NULL,
+    name VARCHAR(100) NOT NULL,
+    email VARCHAR(150),
+    UNIQUE(email));
+    
+CREATE TABLE cources(
+    cource_id INT PRIMARY KEY NOT NULL,
+    cource_name VARCHAR(150) NOT NULL
+   );
+   
+CREATE TABLE enrollments(
+    student_id INT,
+    cource_id INT ,
+    FOREIGN KEY(student_id)REFERENCES students(student_id),
+    FOREIGN KEY(cource_id)REFERENCES cources(cource_id)
+         );

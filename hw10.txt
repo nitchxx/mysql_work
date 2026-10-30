@@ -1,0 +1,10 @@
+CREATE TABLE categories (
+    category_id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+    category VARCHAR(50));
+    
+CREATE TABLE books(
+    book_id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+    book_title VARCHAR(50),
+    category_id INT,
+    INDEX book_name (book_title),
+    FOREIGN KEY(category_id) REFERENCES categories(category_id));
